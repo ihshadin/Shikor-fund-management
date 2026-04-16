@@ -30,11 +30,11 @@ export default function DashboardShell({ currentUser, onLogout, theme, setTheme,
     >
       {/* ── Fixed animated background orbs ── */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="orb-1 absolute -top-48 -left-48 h-[700px] w-[700px] rounded-full blur-[120px]"
+        <div className="orb-1 absolute -top-48 -left-48 h-[700px] w-[700px] rounded-lg blur-[120px]"
           style={{ background: `radial-gradient(circle at 40% 40%, rgba(32,109,247,${isDark ? '0.3' : '0.2'}) 0%, transparent 70%)` }} />
-        <div className="orb-2 absolute top-1/3 -right-60 h-[600px] w-[600px] rounded-full blur-[110px]"
+        <div className="orb-2 absolute top-1/3 -right-60 h-[600px] w-[600px] rounded-lg blur-[110px]"
           style={{ background: `radial-gradient(circle at 60% 50%, rgba(32,109,247,${isDark ? '0.22' : '0.15'}) 0%, transparent 70%)` }} />
-        <div className="orb-3 absolute -bottom-24 left-1/4 h-[500px] w-[500px] rounded-full blur-[100px]"
+        <div className="orb-3 absolute -bottom-24 left-1/4 h-[500px] w-[500px] rounded-lg blur-[100px]"
           style={{ background: `radial-gradient(circle at 50% 60%, rgba(32,109,247,${isDark ? '0.18' : '0.12'}) 0%, transparent 70%)` }} />
         {/* Subtle grid texture in dark */}
         {isDark && (
@@ -54,7 +54,7 @@ export default function DashboardShell({ currentUser, onLogout, theme, setTheme,
 
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-3 sm:px-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl"
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg"
               style={{ background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)', boxShadow: '0 4px 16px rgba(32,109,247,0.5)' }}
             >
               <Wallet size={20} className="text-white" />
@@ -68,19 +68,21 @@ export default function DashboardShell({ currentUser, onLogout, theme, setTheme,
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="hidden items-center rounded-full px-3 py-1 text-xs font-bold sm:flex"
+            {/* <span className="hidden items-center rounded-lg px-3 py-1 text-xs font-bold sm:flex"
               style={{ background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)', color: 'white', boxShadow: '0 2px 10px rgba(32,109,247,0.4)' }}
-            >{currentUser.name}</span>
+            >
+              {currentUser.name}
+            </span> */}
             <button
               onClick={() => setTheme(isDark ? 'light' : 'dark')}
-              className="flex h-8 w-8 items-center justify-center rounded-xl transition hover:scale-105"
+              className="flex h-8 w-8 items-center justify-center rounded-lg transition hover:scale-105"
               style={{ background: 'rgba(32,109,247,0.15)', border: '1px solid rgba(32,109,247,0.25)', color: isDark ? 'white' : '#0f172a' }}
             >
               {isDark ? <Sun size={15} /> : <Moon size={15} />}
             </button>
             <button
               onClick={onLogout}
-              className="btn-glow btn-primary flex h-8 items-center gap-1.5 rounded-xl px-3 text-xs font-semibold text-white"
+              className="btn-glow btn-primary flex h-8 items-center gap-1.5 rounded-lg px-3 text-xs font-semibold text-white"
             >
               <LogOut size={13} /> Logout
             </button>

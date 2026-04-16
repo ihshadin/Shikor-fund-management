@@ -48,30 +48,30 @@ export default function AuthPage({ onLogin, onRegister }: AuthPageProps) {
       {/* ── Animated background orbs ── */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Large primary orb — top left */}
-        <div className="orb-1 absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full blur-[100px]"
+        <div className="orb-1 absolute -top-40 -left-40 h-[600px] w-[600px] rounded-lg blur-[100px]"
           style={{ background: 'radial-gradient(circle at 40% 40%, rgba(32,109,247,0.45) 0%, rgba(32,109,247,0.1) 60%, transparent 100%)' }} />
         {/* Medium orb — right center */}
-        <div className="orb-2 absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full blur-[90px]"
+        <div className="orb-2 absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-lg blur-[90px]"
           style={{ background: 'radial-gradient(circle at 60% 50%, rgba(32,109,247,0.35) 0%, rgba(32,109,247,0.08) 60%, transparent 100%)' }} />
         {/* Small orb — bottom center */}
-        <div className="orb-3 absolute -bottom-20 left-1/3 h-[400px] w-[400px] rounded-full blur-[80px]"
+        <div className="orb-3 absolute -bottom-20 left-1/3 h-[400px] w-[400px] rounded-lg blur-[80px]"
           style={{ background: 'radial-gradient(circle at 50% 60%, rgba(32,109,247,0.28) 0%, transparent 70%)' }} />
         {/* Tiny sparkle dots */}
-        <div className="absolute top-24 left-24 h-1.5 w-1.5 rounded-full bg-white/20 animate-pulse" />
-        <div className="absolute top-48 right-36 h-1 w-1 rounded-full animate-pulse" style={{ background: '#206df7', opacity: 0.7, animationDelay: '1s' }} />
-        <div className="absolute bottom-44 left-16 h-1 w-1 rounded-full bg-white/30 animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-24 right-24 h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: '#206df7', opacity: 0.5, animationDelay: '0.7s' }} />
-        <div className="absolute top-1/3 left-1/4 h-1 w-1 rounded-full bg-white/15 animate-pulse" style={{ animationDelay: '1.8s' }} />
-        <div className="absolute top-2/3 right-1/4 h-1 w-1 rounded-full animate-pulse" style={{ background: '#206df7', opacity: 0.4, animationDelay: '0.4s' }} />
+        <div className="absolute top-24 left-24 h-1.5 w-1.5 rounded-lg bg-white/20 animate-pulse" />
+        <div className="absolute top-48 right-36 h-1 w-1 rounded-lg animate-pulse" style={{ background: '#206df7', opacity: 0.7, animationDelay: '1s' }} />
+        <div className="absolute bottom-44 left-16 h-1 w-1 rounded-lg bg-white/30 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-24 right-24 h-1.5 w-1.5 rounded-lg animate-pulse" style={{ background: '#206df7', opacity: 0.5, animationDelay: '0.7s' }} />
+        <div className="absolute top-1/3 left-1/4 h-1 w-1 rounded-lg bg-white/15 animate-pulse" style={{ animationDelay: '1.8s' }} />
+        <div className="absolute top-2/3 right-1/4 h-1 w-1 rounded-lg animate-pulse" style={{ background: '#206df7', opacity: 0.4, animationDelay: '0.4s' }} />
       </div>
 
       <div className="relative w-full max-w-md animate-fade-in">
         {/* Logo */}
         <div className="mb-8 text-center">
           <div className="relative mx-auto mb-5 h-20 w-20">
-            <div className="absolute inset-0 rounded-2xl blur-md animate-pulse"
+            <div className="absolute inset-0 rounded-lg blur-md animate-pulse"
               style={{ background: '#206df7', opacity: 0.5, animationDuration: '3s' }} />
-            <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl"
+            <div className="relative flex h-20 w-20 items-center justify-center rounded-lg"
               style={{ background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)', boxShadow: '0 8px 44px rgba(32,109,247,0.55)' }}>
               <Wallet size={36} className="text-white drop-shadow-lg" />
             </div>
@@ -89,7 +89,7 @@ export default function AuthPage({ onLogin, onRegister }: AuthPageProps) {
         </div>
 
         {/* Card */}
-        <div className="overflow-hidden rounded-3xl"
+        <div className="overflow-hidden rounded-lg"
           style={{ background: 'rgba(32,109,247,0.07)', backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)', border: '1px solid rgba(32,109,247,0.2)', boxShadow: '0 24px 80px rgba(32,109,247,0.2), 0 8px 32px rgba(0,0,0,0.6)' }}
         >
           {/* Tabs */}
@@ -105,7 +105,7 @@ export default function AuthPage({ onLogin, onRegister }: AuthPageProps) {
                 )}
                 <span className="relative">{t === 'login' ? 'Login' : 'Register'}</span>
                 {tab === t && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-14 rounded-full"
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-14 rounded-lg"
                     style={{ background: '#206df7', boxShadow: '0 0 8px #206df7' }} />
                 )}
               </button>
@@ -119,7 +119,7 @@ export default function AuthPage({ onLogin, onRegister }: AuthPageProps) {
                 <Field label="Password" type="password" value={password} onChange={setPassword} placeholder="••••••••" />
                 {error && <Alert text={error} type="error" />}
                 <Btn loading={loading} label="Login" />
-                <div className="mt-4 rounded-2xl p-4 text-xs"
+                <div className="mt-4 rounded-lg p-4 text-xs"
                   style={{ background: 'rgba(32,109,247,0.06)', border: '1px solid rgba(32,109,247,0.12)', color: 'rgba(255,255,255,0.4)' }}
                 >
                   <p className="mb-1.5 font-semibold text-white/60">Demo Accounts</p>
@@ -161,7 +161,7 @@ function Field({ label, type, value, onChange, placeholder }: {
       <input
         type={type} value={value} placeholder={placeholder} required
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-xl px-4 py-3 text-sm text-white transition-all"
+        className="w-full rounded-lg px-4 py-3 text-sm text-white transition-all"
         style={{ background: 'rgba(32,109,247,0.08)', border: '1px solid rgba(32,109,247,0.18)', color: 'white' }}
       />
     </div>
@@ -171,7 +171,7 @@ function Field({ label, type, value, onChange, placeholder }: {
 function Alert({ text, type }: { text: string; type: 'error' | 'success' }) {
   const isOk = type === 'success';
   return (
-    <p className="rounded-xl px-4 py-2.5 text-sm font-medium"
+    <p className="rounded-lg px-4 py-2.5 text-sm font-medium"
       style={isOk
         ? { background: 'rgba(32,109,247,0.12)', border: '1px solid rgba(32,109,247,0.3)', color: 'rgba(255,255,255,0.9)' }
         : { background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,200,200,0.9)' }
@@ -183,11 +183,11 @@ function Alert({ text, type }: { text: string; type: 'error' | 'success' }) {
 function Btn({ loading, label }: { loading: boolean; label: string }) {
   return (
     <button type="submit" disabled={loading}
-      className="btn-glow btn-primary w-full rounded-xl py-3 font-bold text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-40"
+      className="btn-glow btn-primary w-full rounded-lg py-3 font-bold text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-40"
     >
       {loading ? (
         <span className="flex items-center justify-center gap-2">
-          <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+          <span className="h-4 w-4 animate-spin rounded-lg border-2 border-white/30 border-t-white" />
           Please wait...
         </span>
       ) : label}

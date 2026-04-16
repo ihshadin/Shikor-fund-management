@@ -70,9 +70,9 @@ export default function ReviewerDashboard({
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            <div className="glass-card rounded-2xl p-4 hover-lift">
+            <div className="glass-card rounded-lg p-4 hover-lift">
               <p className="mb-2 text-sm font-bold text-white/60">Your Month Status</p>
-              <span className={`rounded-full px-3 py-1.5 text-sm font-bold ${currentMonthStatus ? badgeClass(currentMonthStatus) : ''}`}
+              <span className={`rounded-lg px-3 py-1.5 text-sm font-bold ${currentMonthStatus ? badgeClass(currentMonthStatus) : ''}`}
                 style={!currentMonthStatus ? { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)' } : {}}
               >{currentMonthStatus ?? 'Not Paid'}</span>
               {!currentMonthStatus && (
@@ -81,14 +81,14 @@ export default function ReviewerDashboard({
                 >Submit</button>
               )}
             </div>
-            <div className="glass-card rounded-2xl p-4 hover-lift">
+            <div className="glass-card rounded-lg p-4 hover-lift">
               <p className="mb-2 text-sm font-bold text-white/60">Your Total Approved</p>
               <p className="text-2xl font-bold text-white">{formatCurrency(ownApproved)}</p>
             </div>
           </div>
 
           {pendingRequests.length > 0 && (
-            <div className="rounded-2xl border p-4"
+            <div className="rounded-lg border p-4"
               style={{ background: 'rgba(32,109,247,0.08)', borderColor: 'rgba(32,109,247,0.25)' }}
             >
               <div className="flex items-center justify-between">
@@ -104,17 +104,21 @@ export default function ReviewerDashboard({
         <div className="space-y-4">
           <SearchFilters filterMonth={filterMonth} filterName={filterName} setFilterMonth={setFilterMonth} setFilterName={setFilterName} />
           <PaymentTable
-            title={`Pending Requests (${filter(pendingRequests).length})`}
+            title={`Pending Requests`}
             payments={filter(pendingRequests)}
             actions={(p) => (
               <div className="flex gap-1.5">
                 <button onClick={() => onApprove(p.id)}
                   className="btn-glow btn-primary rounded-lg px-2.5 py-1.5 text-xs font-bold text-white active:scale-95"
-                >✓ Approve</button>
+                >
+                  ✓
+                </button>
                 <button onClick={() => onReject(p.id)}
                   className="btn-glow rounded-lg px-2.5 py-1.5 text-xs font-bold active:scale-95"
                   style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'white' }}
-                >✗ Reject</button>
+                >
+                  ✗
+                </button>
               </div>
             )}
           />
@@ -124,25 +128,25 @@ export default function ReviewerDashboard({
       {tab === 'approved' && (
         <div className="space-y-4">
           <SearchFilters filterMonth={filterMonth} filterName={filterName} setFilterMonth={setFilterMonth} setFilterName={setFilterName} />
-          <div className="rounded-2xl p-3"
+          <div className="rounded-lg p-3"
             style={{ background: 'rgba(32,109,247,0.1)', border: '1px solid rgba(32,109,247,0.2)' }}
           >
             <span className="text-sm font-bold text-white">
               Total: {formatCurrency(filter(approvedPayments).reduce((s, p) => s + p.amount, 0))}
             </span>
           </div>
-          <PaymentTable title={`Approved (${filter(approvedPayments).length})`} payments={filter(approvedPayments)} />
+          <PaymentTable title={`Approved`} payments={filter(approvedPayments)} />
         </div>
       )}
 
       {tab === 'rejected' && (
         <div className="space-y-4">
           <SearchFilters filterMonth={filterMonth} filterName={filterName} setFilterMonth={setFilterMonth} setFilterName={setFilterName} />
-          <PaymentTable title={`Rejected (${filter(rejectedPayments).length})`} payments={filter(rejectedPayments)} />
+          <PaymentTable title={`Rejected`} payments={filter(rejectedPayments)} />
         </div>
       )}
 
-      {tab === 'mine'   && <PaymentTable title={`My Payment History (${memberPayments.length})`} payments={memberPayments} showCopyTrxId hideMemberCol />}
+      {tab === 'mine'   && <PaymentTable title={`My Payment History`} payments={memberPayments} showCopyTrxId hideMemberCol />}
       {tab === 'submit' && <PaymentForm currentUser={currentUser} onSubmit={onSubmit} />}
       {tab === 'export' && <ExportButton payments={payments} />}
     </div>
@@ -151,7 +155,7 @@ export default function ReviewerDashboard({
 
 function StatCard({ label, value, sub, solid }: { label: string; value: string; sub: string; solid?: boolean }) {
   return (
-    <div className="hover-lift relative overflow-hidden rounded-2xl p-4 text-white"
+    <div className="hover-lift relative overflow-hidden rounded-lg p-4 text-white"
       style={solid ? {
         background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)',
         boxShadow: '0 6px 28px rgba(32,109,247,0.4)',
@@ -176,11 +180,11 @@ function SearchFilters({ filterMonth, filterName, setFilterMonth, setFilterName 
   return (
     <div className="flex gap-2">
       <input value={filterMonth} onChange={(e) => setFilterMonth(e.target.value)} placeholder="Search by month…"
-        className="flex-1 rounded-xl px-3 py-2 text-sm text-white placeholder-white/30"
+        className="flex-1 rounded-lg px-3 py-2 text-sm text-white placeholder-white/30"
         style={{ background: 'rgba(32,109,247,0.08)', border: '1px solid rgba(32,109,247,0.18)' }}
       />
       <input value={filterName} onChange={(e) => setFilterName(e.target.value)} placeholder="Search by name…"
-        className="flex-1 rounded-xl px-3 py-2 text-sm text-white placeholder-white/30"
+        className="flex-1 rounded-lg px-3 py-2 text-sm text-white placeholder-white/30"
         style={{ background: 'rgba(32,109,247,0.08)', border: '1px solid rgba(32,109,247,0.18)' }}
       />
     </div>

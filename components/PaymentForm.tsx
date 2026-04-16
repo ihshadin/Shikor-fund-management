@@ -132,7 +132,7 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
       <form onSubmit={handleSubmit} className="space-y-4">
 
         {/* ── Month selector ── */}
-        <div className="space-y-3 rounded-xl p-4"
+        <div className="space-y-3 rounded-lg p-4"
           style={{ background: 'rgba(32,109,247,0.06)', border: '1px solid rgba(32,109,247,0.15)' }}
         >
           <label className="mb-1 block text-sm font-semibold text-white/60">Select Months</label>
@@ -157,7 +157,7 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
                 >
                   {yr}
                   {count > 0 && (
-                    <span className="flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[10px] text-white"
+                    <span className="flex h-4 min-w-4 items-center justify-center rounded-lg px-1 text-[10px] text-white"
                       style={{ background: '#206df7' }}>{count}</span>
                   )}
                 </button>
@@ -211,7 +211,7 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
           <input
             type="number" min={1} value={amount}
             onChange={(e) => setAmount(Number(e.target.value))}
-            className="w-full rounded-xl px-4 py-2.5 text-sm"
+            className="w-full rounded-lg px-4 py-2.5 text-sm"
             style={inputStyle}
           />
         </div>
@@ -233,7 +233,7 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
               type="text" value={recipientName} required
               placeholder="Recipient name"
               onChange={(e) => setRecipientName(e.target.value)}
-              className="mt-2 w-full rounded-xl px-4 py-2.5 text-sm placeholder-white/30"
+              className="mt-2 w-full rounded-lg px-4 py-2.5 text-sm placeholder-white/30"
               style={inputStyle}
             />
           )}
@@ -245,7 +245,7 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
             <label className="mb-1 block text-sm font-semibold text-white/60">Payment Date</label>
             <input type="date" value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full rounded-xl px-4 py-2.5 text-sm"
+              className="w-full rounded-lg px-4 py-2.5 text-sm"
               style={inputStyle}
             />
           </div>
@@ -257,14 +257,14 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
             <input type="text" value={transactionId}
               placeholder="e.g. 8N7X2QK..."
               onChange={(e) => setTransactionId(e.target.value)}
-              className="w-full rounded-xl px-4 py-2.5 text-sm placeholder-white/30"
+              className="w-full rounded-lg px-4 py-2.5 text-sm placeholder-white/30"
               style={inputStyle}
             />
           </div>
         </div>
 
         {msg && (
-          <p className="rounded-xl border px-4 py-2.5 text-sm font-medium"
+          <p className="rounded-lg border px-4 py-2.5 text-sm font-medium"
             style={msg.ok ? {
               background: 'rgba(32,109,247,0.12)',
               borderColor: 'rgba(32,109,247,0.35)',
@@ -279,11 +279,11 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
 
         <button
           type="submit" disabled={submitting || selected.length === 0}
-          className="shikor-btn w-full rounded-xl py-3 font-bold text-white transition-all disabled:cursor-not-allowed disabled:text-white/60"
+          className="shikor-btn w-full rounded-lg py-3 font-bold text-white transition-all disabled:cursor-not-allowed disabled:text-white/60"
         >
           {submitting ? (
             <span className="flex items-center justify-center gap-2">
-              <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+              <span className="h-4 w-4 animate-spin rounded-lg border-2 border-white/30 border-t-white" />
               Submitting...
             </span>
           ) : `Submit${selected.length > 1 ? ` (${selected.length} months)` : ''}`}

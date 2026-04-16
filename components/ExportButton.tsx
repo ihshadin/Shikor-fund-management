@@ -119,7 +119,7 @@ export default function ExportButton({ payments }: ExportButtonProps) {
   };
 
   return (
-    <div className="glass-card rounded-2xl p-5 animate-fade-in">
+    <div className="glass-card rounded-lg p-5 animate-fade-in">
       <h3 className="mb-4 flex items-center gap-2 text-base font-bold text-white">
         <Download size={18} style={{ color: '#206df7' }} /> Export Data
       </h3>
@@ -129,7 +129,7 @@ export default function ExportButton({ payments }: ExportButtonProps) {
         <div className="flex flex-wrap gap-2">
           {PERIODS.map((p) => (
             <button key={p.value} onClick={() => setPeriod(p.value)}
-              className="rounded-xl px-3 py-2 text-xs font-semibold transition-all hover:scale-105"
+              className="rounded-lg px-3 py-2 text-xs font-semibold transition-all hover:scale-105"
               style={period === p.value ? {
                 background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)',
                 color: 'white',
@@ -144,7 +144,7 @@ export default function ExportButton({ payments }: ExportButtonProps) {
         </div>
       </div>
 
-      <div className="mb-4 rounded-xl p-3"
+      <div className="mb-4 rounded-lg p-3"
         style={{ background: 'rgba(32,109,247,0.08)', border: '1px solid rgba(32,109,247,0.15)' }}
       >
         <div className="grid grid-cols-2 gap-2 text-sm">
@@ -161,11 +161,11 @@ export default function ExportButton({ payments }: ExportButtonProps) {
 
       <div className="grid grid-cols-2 gap-3">
         <button onClick={exportExcel} disabled={rows.length === 0}
-          className="btn-glow flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold text-white transition-all active:scale-[0.98] disabled:opacity-40"
+          className="btn-glow flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-all active:scale-[0.98] disabled:opacity-40"
           style={{ background: 'rgba(32,109,247,0.15)', border: '1px solid rgba(32,109,247,0.3)' }}
         ><FileSpreadsheet size={16} /> Excel</button>
         <button onClick={exportPDF} disabled={rows.length === 0}
-          className="btn-glow btn-primary flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold text-white transition-all active:scale-[0.98] disabled:opacity-40"
+          className="btn-glow btn-primary flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-bold text-white transition-all active:scale-[0.98] disabled:opacity-40"
         ><FileText size={16} /> PDF</button>
       </div>
       {rows.length === 0 && (

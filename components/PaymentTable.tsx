@@ -16,7 +16,7 @@ interface PaymentTableProps {
 
 export default function PaymentTable({ title, payments, actions, compact, showCopyTrxId, hideMemberCol }: PaymentTableProps) {
   return (
-    <div className="overflow-hidden rounded-2xl"
+    <div className="overflow-hidden rounded-lg"
       style={{ background: 'rgba(32,109,247,0.05)', backdropFilter: 'blur(20px)', border: '1px solid rgba(32,109,247,0.15)' }}
     >
       {title && (
@@ -44,8 +44,8 @@ export default function PaymentTable({ title, payments, actions, compact, showCo
               {!compact && <Th>Trx ID</Th>}
               <Th>Status</Th>
               {!compact && <Th>Request Time</Th>}
-              {!compact && <Th>Approval Time</Th>}
-              {!compact && <Th>Approved By</Th>}
+              {!compact && <Th>Update Time</Th>}
+              {!compact && <Th>Reviewer</Th>}
               {actions && <Th>Action</Th>}
             </tr>
           </thead>
@@ -78,7 +78,7 @@ export default function PaymentTable({ title, payments, actions, compact, showCo
                     </td>
                   )}
                   <td className="px-3 py-2">
-                    <span className={`inline-flex rounded-full px-2.5 py-0.5 text-[#5a5a72] text-xs font-bold whitespace-nowrap ${badgeClass(p.status)}`}>
+                    <span className={`inline-flex rounded-lg px-2.5 py-0.5 text-[#5a5a72] text-xs font-bold whitespace-nowrap ${badgeClass(p.status)}`}>
                       {p.status === 'Approved' ? '✓ Approved' : p.status === 'Rejected' ? '✗ Rejected' : '⏳ Pending'}
                     </span>
                   </td>
@@ -142,16 +142,16 @@ function Th({ children }: { children: React.ReactNode }) {
 
 function MethodBadge({ method, recipientName }: { method: string; recipientName?: string }) {
   if (method === 'Bkash')
-    return <span className="inline-flex rounded-full px-2.5 py-0.5 text-xs font-bold text-[#d8d8d8]"
+    return <span className="inline-flex rounded-lg px-2.5 py-0.5 text-xs font-bold text-[#d8d8d8]"
       style={{ background: 'rgba(32,109,247,0.3)', border: '1px solid rgba(32,109,247,0.4)' }}>Bkash</span>;
   if (method === 'Bank')
-    return <span className="inline-flex rounded-full px-2.5 py-0.5 text-xs font-bold text-[#d8d8d8]"
+    return <span className="inline-flex rounded-lg px-2.5 py-0.5 text-xs font-bold text-[#d8d8d8]"
       style={{ background: '#206df7', boxShadow: '0 1px 6px rgba(32,109,247,0.4)' }}>Bank</span>;
   return (
     <span className="inline-flex flex-col rounded-lg px-2 py-0.5 text-xs font-bold text-[#d8d8d8]"
       style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)' }}
     >
-      To Member{recipientName && <span className="font-normal" style={{ color: 'rgba(255,255,255,0.6)' }}>({recipientName})</span>}
+      To Member {recipientName && <span className="font-normal" style={{ color: 'rgba(255,255,255,0.6)' }}>({recipientName})</span>}
     </span>
   );
 }

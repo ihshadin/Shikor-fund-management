@@ -62,7 +62,7 @@ export default function AdminDashboard({
           </div>
 
           {/* Reviewers */}
-          <div className="glass-card rounded-2xl p-5 hover-lift">
+          <div className="glass-card rounded-lg p-5 hover-lift">
             <p className="mb-3 flex items-center gap-2 text-sm font-bold text-white/60">
               <Crown size={15} style={{ color: '#206df7' }} /> Reviewers ({reviewers.length})
             </p>
@@ -71,10 +71,10 @@ export default function AdminDashboard({
             ) : (
               <div className="space-y-2">
                 {reviewers.map((r) => (
-                  <div key={r.id} className="flex items-center gap-3 rounded-xl p-3"
+                  <div key={r.id} className="flex items-center gap-3 rounded-lg p-3"
                     style={{ background: 'rgba(32,109,247,0.08)', border: '1px solid rgba(32,109,247,0.2)' }}
                   >
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl font-bold text-white"
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg font-bold text-white"
                       style={{ background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)', boxShadow: '0 4px 14px rgba(32,109,247,0.45)' }}
                     >{r.name[0]}</div>
                     <div>
@@ -88,7 +88,7 @@ export default function AdminDashboard({
           </div>
 
           {pendingMembers.length > 0 && (
-            <div className="rounded-2xl border p-4"
+            <div className="rounded-lg border p-4"
               style={{ background: 'rgba(32,109,247,0.08)', borderColor: 'rgba(32,109,247,0.25)' }}
             >
               <div className="flex items-center justify-between">
@@ -108,11 +108,11 @@ export default function AdminDashboard({
       {tab === 'members' && (
         <div className="space-y-5">
           {pendingMembers.length > 0 && (
-            <div className="glass-card rounded-2xl p-5">
+            <div className="glass-card rounded-lg p-5">
               <p className="mb-3 text-sm font-bold text-white/80">New Registrations ({pendingMembers.length})</p>
               <div className="space-y-2">
                 {pendingMembers.map((m) => (
-                  <div key={m.id} className="flex items-center justify-between rounded-xl px-4 py-3"
+                  <div key={m.id} className="flex items-center justify-between rounded-lg px-4 py-3"
                     style={{ background: 'rgba(32,109,247,0.07)', border: '1px solid rgba(32,109,247,0.18)' }}
                   >
                     <div>
@@ -134,17 +134,17 @@ export default function AdminDashboard({
             </div>
           )}
 
-          <div className="glass-card rounded-2xl p-5">
+          <div className="glass-card rounded-lg p-5">
             <p className="mb-4 text-sm font-bold text-white/80">
               All Members ({members.filter(m => m.status === 'active' && m.role !== 'admin').length} active)
             </p>
             <div className="space-y-2">
               {members.filter((m) => m.status === 'active' && m.role !== 'admin').map((m) => (
-                <div key={m.id} className="flex flex-wrap items-center justify-between gap-2 rounded-xl px-4 py-3 hover-lift"
+                <div key={m.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg px-4 py-3 hover-lift"
                   style={{ background: 'rgba(32,109,247,0.06)', border: '1px solid rgba(32,109,247,0.12)' }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl font-bold text-sm text-white"
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg font-bold text-sm text-white"
                       style={{ background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)', boxShadow: '0 2px 10px rgba(32,109,247,0.35)' }}
                     >{m.name[0]}</div>
                     <div>
@@ -180,7 +180,7 @@ export default function AdminDashboard({
 
 function StatCard({ label, value, sub, solid }: { label: string; value: string; sub: string; solid?: boolean }) {
   return (
-    <div className="hover-lift relative overflow-hidden rounded-2xl p-4 text-white"
+    <div className="hover-lift relative overflow-hidden rounded-lg p-4 text-white"
       style={solid ? {
         background: 'linear-gradient(135deg, #091530 0%, #206df7 100%)',
         boxShadow: '0 6px 28px rgba(32,109,247,0.4)',

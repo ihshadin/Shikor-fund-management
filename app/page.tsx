@@ -139,16 +139,16 @@ export default function Home() {
   if (authLoading) {
     return (
       <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#080b18]">
-        <div className="orb-1 absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full blur-[80px]" style={{ background: 'radial-gradient(circle, rgba(15,205,161,0.3) 0%, rgba(32,109,247,0.15) 100%)' }} />
-        <div className="orb-2 absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full blur-[80px]" style={{ background: 'radial-gradient(circle, rgba(32,109,247,0.25) 0%, rgba(15,205,161,0.12) 100%)' }} />
+        <div className="orb-1 absolute -top-32 -left-32 h-[500px] w-[500px] rounded-lg blur-[80px]" style={{ background: 'radial-gradient(circle, rgba(15,205,161,0.3) 0%, rgba(32,109,247,0.15) 100%)' }} />
+        <div className="orb-2 absolute bottom-0 right-0 h-[400px] w-[400px] rounded-lg blur-[80px]" style={{ background: 'radial-gradient(circle, rgba(32,109,247,0.25) 0%, rgba(15,205,161,0.12) 100%)' }} />
         <div className="relative flex flex-col items-center gap-4">
           <div className="relative h-14 w-14">
-            <div className="absolute inset-0 rounded-2xl blur-sm opacity-60 animate-pulse" style={{ background: 'linear-gradient(135deg, #0fcda1, #206df7)' }} />
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl" style={{ background: 'linear-gradient(135deg, #0fcda1, #206df7)' }}>
+            <div className="absolute inset-0 rounded-lg blur-sm opacity-60 animate-pulse" style={{ background: 'linear-gradient(135deg, #0fcda1, #206df7)' }} />
+            <div className="relative flex h-14 w-14 items-center justify-center rounded-lg" style={{ background: 'linear-gradient(135deg, #0fcda1, #206df7)' }}>
               <span className="text-2xl text-white font-bold">S</span>
             </div>
           </div>
-          <div className="h-8 w-8 animate-spin rounded-full border-white/20" style={{ borderWidth: '3px', borderStyle: 'solid', borderTopColor: '#0fcda1' }} />
+          <div className="h-8 w-8 animate-spin rounded-lg border-white/20" style={{ borderWidth: '3px', borderStyle: 'solid', borderTopColor: '#0fcda1' }} />
           <p className="text-white/50 text-sm">Loading...</p>
         </div>
       </div>

@@ -84,7 +84,7 @@ export default function MemberDashboard({ currentUser, payments, currentMonthSta
           <div className="glow-card hover-lift rounded-lg p-5">
             <p className="mb-3 text-sm font-bold text-white/60">This Month Payment Status</p>
             <div className="flex items-center gap-3">
-              <span className={`rounded-full px-4 py-2 text-sm font-bold ${currentMonthStatus ? badgeClass(currentMonthStatus) : ''}`}
+              <span className={`rounded-lg px-4 py-2 text-sm font-bold ${currentMonthStatus ? badgeClass(currentMonthStatus) : ''}`}
                 style={!currentMonthStatus ? { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)' } : {}}
               >
                 {currentMonthStatus
@@ -168,8 +168,8 @@ function RankCard({ label, rank, sub, missed }: { label: string; rank: string; s
     <div className="glow-card hover-lift rounded-lg p-4 text-white">
       <p className="text-[11px] font-semibold uppercase tracking-wide text-white/55">{label}</p>
       <p className="mt-1.5 text-2xl font-bold leading-tight" style={{ color: accent }}>{rank}</p>
-      <div className="mt-1.5 h-1 w-full rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.07)' }}>
-        <div className="h-full rounded-full transition-all" style={{ width: `${Math.max(5, 100 - missed * 16)}%`, background: accent, boxShadow: `0 0 6px ${accent}` }} />
+      <div className="mt-1.5 h-1 w-full rounded-lg overflow-hidden" style={{ background: 'rgba(255,255,255,0.07)' }}>
+        <div className="h-full rounded-lg transition-all" style={{ width: `${Math.max(5, 100 - missed * 16)}%`, background: accent, boxShadow: `0 0 6px ${accent}` }} />
       </div>
       <p className="mt-1 text-xs text-white/40">{sub}</p>
     </div>

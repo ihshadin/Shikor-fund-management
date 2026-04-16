@@ -37,11 +37,11 @@ export default function TabNav({ tabs, active, onChange }: TabNavProps) {
                   color: 'rgba(255,255,255,0.45)',
                 }}
               >
-                {isActive && <span className="absolute inset-0 rounded-xl shimmer-bg opacity-25" />}
+                {isActive && <span className="absolute inset-0 rounded-lg shimmer-bg opacity-25" />}
                 <Icon size={16} className="relative" />
                 <span className="relative">{tab.label}</span>
                 {tab.badge != null && tab.badge > 0 && (
-                  <span className="relative flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-xs font-bold"
+                  <span className="relative flex h-5 min-w-5 items-center justify-center rounded-lg px-1.5 text-xs font-bold"
                     style={isActive
                       ? { background: 'rgba(255,255,255,0.28)', color: 'white' }
                       : { background: 'rgba(255,255,255,0.15)', color: 'white', border: '1px solid rgba(255,255,255,0.2)' }}
@@ -68,13 +68,13 @@ export default function TabNav({ tabs, active, onChange }: TabNavProps) {
                   style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.3)' }}
                 >
                   {isActive && (
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-10 rounded-full"
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-10 rounded-lg"
                       style={{ background: '#206df7', boxShadow: '0 0 8px #206df7' }} />
                   )}
-                  <div className="relative flex h-7 w-7 items-center justify-center rounded-xl transition-all">
+                  <div className="relative flex h-7 w-7 items-center justify-center rounded-lg transition-all">
                     <Icon size={17} />
                     {tab.badge != null && tab.badge > 0 && (
-                      <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold text-white"
+                      <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-lg px-1 text-[9px] font-bold text-white"
                         style={{ background: 'rgba(255,255,255,0.25)', border: '1px solid rgba(255,255,255,0.3)' }}
                       >{tab.badge}</span>
                     )}
