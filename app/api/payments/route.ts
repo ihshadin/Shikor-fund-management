@@ -23,7 +23,8 @@ export async function GET(request: NextRequest) {
   await connectDB();
 
   const role = (user as any).role;
-  const query = role === 'member' ? { userId: (user as any)._id ?? (user as any).id } : {};
+  const isReviewer = (user as any).isReviewer === true;
+  const query = (role === 'member' && !isReviewer) ? { userId: (user as any)._id ?? (user as any).id } : {};
   const payments = await Payment.find(query).sort({ createdAt: -1 });
 
   return NextResponse.json(payments.map(normalize));
