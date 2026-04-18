@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { LogOut, Moon, Sun, Wallet } from 'lucide-react';
+import { LogOut, Wallet } from 'lucide-react';
 import { UserSession } from '@/types';
 
 function getDashboardLabel(user: UserSession) {
@@ -18,7 +18,7 @@ interface DashboardShellProps {
   children: ReactNode;
 }
 
-export default function DashboardShell({ currentUser, onLogout, theme, setTheme, children }: DashboardShellProps) {
+export default function DashboardShell({ currentUser, onLogout, theme, children }: DashboardShellProps) {
   const isDark = theme === 'dark';
 
   return (
@@ -73,14 +73,8 @@ export default function DashboardShell({ currentUser, onLogout, theme, setTheme,
             >
               {currentUser.name}
             </span> */}
-            <button
-              onClick={() => setTheme(isDark ? 'light' : 'dark')}
-              className="flex h-8 w-8 items-center justify-center rounded-lg transition hover:scale-105"
-              style={{ background: 'rgba(32,109,247,0.15)', border: '1px solid rgba(32,109,247,0.25)', color: isDark ? 'white' : '#0f172a' }}
-            >
-              {isDark ? <Sun size={15} /> : <Moon size={15} />}
-            </button>
-            <button
+            {/* Theme toggle — hidden for now */}
+<button
               onClick={onLogout}
               className="btn-glow btn-primary flex h-8 items-center gap-1.5 rounded-lg px-3 text-xs font-semibold text-white"
             >

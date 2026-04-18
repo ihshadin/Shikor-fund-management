@@ -119,16 +119,6 @@ export default function AuthPage({ onLogin, onRegister }: AuthPageProps) {
                 <Field label="Password" type="password" value={password} onChange={setPassword} placeholder="••••••••" />
                 {error && <Alert text={error} type="error" />}
                 <Btn loading={loading} label="Login" />
-                <div className="mt-4 rounded-lg p-4 text-xs"
-                  style={{ background: 'rgba(32,109,247,0.06)', border: '1px solid rgba(32,109,247,0.12)', color: 'rgba(255,255,255,0.4)' }}
-                >
-                  <p className="mb-1.5 font-semibold text-white/60">Demo Accounts</p>
-                  <div className="space-y-1">
-                    <p>Member: member@shikor.com / member123</p>
-                    <p>Reviewer: reviewer@shikor.com / reviewer123</p>
-                    <p>Admin:&nbsp; admin@shikor.com / admin123</p>
-                  </div>
-                </div>
               </form>
             ) : (
               <form onSubmit={handleRegister} className="space-y-4">
