@@ -286,7 +286,7 @@ export default function PaymentForm({ currentUser, onSubmit }: PaymentFormProps)
               <span className="h-4 w-4 animate-spin rounded-lg border-2 border-white/30 border-t-white" />
               Submitting...
             </span>
-          ) : `Submit${selected.length > 1 ? ` (${selected.length} months)` : ''}`}
+          ) : `Submit${selected.length > 0 ? ` (৳${(selected.length * MONTHLY_FEE).toLocaleString('en-US')})` : ''}`}
         </button>
 
       </form>
